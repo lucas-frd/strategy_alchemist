@@ -1,0 +1,73 @@
+<html>
+<head>
+  <title>Strategy Alchemist</title>
+  <link rel="stylesheet" href="static/css/style.css">
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</head>
+<body>
+  <div class="navbar">
+    <a href="/">
+      <img src="static/images/logo-2.png" alt="Logo">
+    </a>
+    <div class="dropdown">
+      <a class="dropdown-toggle" href="#">Explore &#x25BE;</a>
+      <div class="dropdown-content">
+        <a href="explore_moving_average_crossover.html">Moving Average Crossover</a>
+        <a href="explore_mean_reversion_bollinger_bands.html">Mean Reversion with Bollinger Bands</a>
+         <a href="explore_simple_contrarian.html">Simple Contrarian</a>
+         <a href="explore_trend_following_macd.html">Trend Following with MACD</a>
+         <a href="explore_logistic_regression_machine_learning.html">Logistic Regression with Machine Learning</a>
+      </div>
+    </div>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div id="social-test">
+    <ul class="social">
+      <li><a href="https://www.linkedin.com/in/lucas-fernandes1/" target = "_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+      <li><a href="https://github.com/lucas-frd" target = "_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+      <li><a href="mailto:lucas.fernandes@mail.mcgill.ca" target = "_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+    </ul>
+    </div>
+
+  </div>
+</body>
+  </div>
+</html>
+
+<div class="card">
+  <label for="hint-click">
+    <input type="checkbox" id="hint-click" style="display: none;">
+    <div class="hint">
+      <span class="fa fa-info"></span>
+      <p>Trend Following with MACD employs the MACD indicator, which tracks the relationship between two moving averages of an asset's price. When the MACD line crosses above the signal line, it generates a buy signal, suggesting an upward trend. Conversely, a cross below the signal line generates a sell signal, indicating a potential downward trend. Traders use this strategy to capture substantial portions of a trend.</p>
+    </div>
+  </label>
+  
+  <h1>Trend Following with MACD</h1>
+  <p>Ride prevailing market trends using the Moving Average Convergence Divergence (MACD) indicator.<br/>Click the "i" icon for further context.
+  <form action="/results_trend_following_macd.html" method="POST">
+    <!-- Form fields for strategy parameters -->
+    <label for="symbol">Ticker</label>
+    <input type="text" id="symbol" name="symbol">
+
+    <label for="short_exp_moving_average">Short Exponential Moving Average Period (Days)</label>
+    <input type="text" id="short_exp_moving_average" name="short_exp_moving_average">
+    
+    <label for="long_exp_moving_average">Long Exponential Moving Average Period (Days)</label>
+    <input type="text" id="long_exp_moving_average" name="long_exp_moving_average">
+
+    <label for="signal_exp_moving_average">Signal Exponential Moving Average (Period)</label>
+    <input type="text" id="signal_exp_moving_average" name="signal_exp_moving_average">
+
+    <label for="tc">Trading Costs:</label>
+    <input type="text" name="tc" id="tc">
+
+
+    <label for="start_date">Start Date</label>
+    <input type="date" id="start_date" name="start_date">
+    
+    <label for="end_date">End Date</label>
+    <input type="date" id="end_date" name="end_date">
+    
+    <button type="submit" id="execute">Execute</button>
+</form>

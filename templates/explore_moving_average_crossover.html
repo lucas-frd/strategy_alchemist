@@ -1,0 +1,70 @@
+<html>
+<head>
+  <title>Strategy Alchemist</title>
+  <link rel="stylesheet" href="static/css/style.css">
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</head>
+<body>
+  <div class="navbar">
+    <a href="/">
+      <img src="static/images/logo-2.png" alt="Logo">
+    </a>
+    <div class="dropdown">
+      <a class="dropdown-toggle" href="#">Explore &#x25BE;</a>
+      <div class="dropdown-content">
+        <a href="explore_moving_average_crossover.html">Moving Average Crossover</a>
+        <a href="explore_mean_reversion_bollinger_bands.html">Mean Reversion with Bollinger Bands</a>
+         <a href="explore_simple_contrarian.html">Simple Contrarian</a>
+         <a href="explore_trend_following_macd.html">Trend Following with MACD</a>
+         <a href="explore_logistic_regression_machine_learning.html">Logistic Regression with Machine Learning</a>
+      </div>
+    </div>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div id="social-test">
+    <ul class="social">
+      <li><a href="https://www.linkedin.com/in/lucas-fernandes1/" target = "_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+      <li><a href="https://github.com/lucas-frd" target = "_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+      <li><a href="mailto:lucas.fernandes@mail.mcgill.ca" target = "_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+    </ul>
+    </div>
+
+  </div>
+</body>
+  </div>
+</html>
+
+<div class="card">
+    <label for="hint-click">
+      <input type="checkbox" id="hint-click" style="display: none;">
+      <div class="hint">
+        <span class="fa fa-info"></span>
+        <p>The Moving Average Crossover strategy helps traders spot trends by comparing two moving averages – typically a short-term (e.g., 50-day) and a long-term (e.g., 200-day). When the short-term moving average crosses above the long-term one, it generates a buy signal, indicating a potential upward trend. Conversely, a cross below suggests a sell signal, signaling a potential downward trend. This strategy aims to capture significant price movements.</p>
+      </div>
+    </label>
+    
+    <h1>Moving Average Crossover Strategy</h1>
+    <p>Identify buy and sell signals by comparing short-term and long-term moving averages.<br/>Click the "i" icon for further context.
+    <form action="/results_moving_average_crossover.html" method="POST">
+      <!-- Form fields for strategy parameters -->
+      <label for="symbol">Ticker</label>
+      <input type="text" id="symbol" name="symbol">
+
+      <label for="short_moving_average">Short Moving Average Period (Days)</label>
+      <input type="text" id="short_moving_average" name="short_moving_average">
+      
+      <label for="long_moving_average">Long Moving Average Period (Days)</label>
+      <input type="text" id="long_moving_average" name="long_moving_average">
+
+      <label for="tc">Trading Costs:</label>
+      <input type="text" name="tc" id="tc">
+  
+      <label for="start_date">Start Date</label>
+      <input type="date" id="start_date" name="start_date">
+      
+      <label for="end_date">End Date</label>
+      <input type="date" id="end_date" name="end_date">
+      
+      <button type="submit" id="execute">Execute</button>
+  </form>
+  
