@@ -1,0 +1,3 @@
+[submodule "strategy_alchemist"]
+    path = strategy_alchemist
+    url = https://github.com/lucas-frd/strategy_alchemist.git
