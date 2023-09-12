@@ -43,7 +43,7 @@
     </div>
   </label>
   
-  <h1>Mean Reversion with Bollinger Bands Strategy</h1>
+  <h1>Mean Reversion with Bollinger Bands</h1>
   <p>Bet on price reversals from extreme highs or lows.<br/>Click the "i" icon for further context.</p>
   <form action="/results_mean_reversion_bollinger_bands.html" method="POST">
     <!-- Form fields for strategy parameters -->
@@ -51,15 +51,14 @@
     <input type="text" id="symbol" name="symbol">
 
     <label for="moving_average">Moving Average Period (Days)</label>
-    <input type="text id="moving_average" name="moving_average">
+    <input type="number" id="moving_average" name="moving_average">
     
     <label for="deviation">Deviation</label>
-    <input type="text" id="deviation" name="deviation">
+    <input type="number" step="0.00000000000001" id="deviation" name="deviation">
     
     <label for="tc">Trading Costs:</label>
-    <input type="text" name="tc" id="tc">
+    <input type="number" step="0.00000000000001" name="tc" id="tc">
 
- 
     <label for="start_date">Start Date</label>
     <input type="date" id="start_date" name="start_date">
     

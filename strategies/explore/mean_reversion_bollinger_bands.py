@@ -5,6 +5,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from itertools import product
 import yfinance as yf
+import os
 
 class MeanReversionBollingerBands():
     ''' Class for the vectorized backtesting of Bollinger Bands-based trading strategies.
@@ -96,4 +97,6 @@ class MeanReversionBollingerBands():
         plt.xlabel("Date")
         plt.ylabel("Cumulative Returns")
         plt.legend()
-        plt.savefig('static/images/reversion_strategy_graph.png')    
+        project_dir = os.path.expanduser('/home/strategyalchemist/mysite')
+        image_path = os.path.join(project_dir, 'static/images/strategy_graph.png')
+        plt.savefig(image_path)

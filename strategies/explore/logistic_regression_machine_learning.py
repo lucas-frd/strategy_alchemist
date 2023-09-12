@@ -4,6 +4,7 @@ from sklearn.linear_model import LogisticRegression
 import matplotlib.pyplot as plt
 plt.style.use("seaborn")
 import yfinance as yf
+import os
 
 class LogisticRegressionMachineLearning():
     ''' Class for the vectorized backtesting of Machine Learning-based trading strategies (Classification).
@@ -125,4 +126,6 @@ class LogisticRegressionMachineLearning():
         plt.xlabel("Date")
         plt.ylabel("Cumulative Returns")
         plt.legend()
-        plt.savefig('static/images/classification_strategy_graph.png')
+        project_dir = os.path.expanduser('/home/strategyalchemist/mysite')
+        image_path = os.path.join(project_dir, 'static/images/strategy_graph.png')
+        plt.savefig(image_path)

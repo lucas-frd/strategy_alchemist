@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import yfinance as yf
+import os
 
 class TrendFollowingMACD():
     def __init__(self, symbol, short_period, long_period, signal_period, start, end, tc=0):
@@ -60,4 +61,6 @@ class TrendFollowingMACD():
         plt.xlabel("Date")
         plt.ylabel("Cumulative Returns")
         plt.legend()
-        plt.savefig('static/images/macd_strategy_graph.png')
+        project_dir = os.path.expanduser('/home/strategyalchemist/mysite')
+        image_path = os.path.join(project_dir, 'static/images/strategy_graph.png')
+        plt.savefig(image_path)

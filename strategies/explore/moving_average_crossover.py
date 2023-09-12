@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from itertools import product
 import yfinance as yf
 from datetime import datetime
-
+import os
 
 class MovingAverageCrossover():
     ''' Class for the vectorized backtesting of SMA-based trading strategies.
@@ -86,4 +86,6 @@ class MovingAverageCrossover():
             plt.xlabel("Date")
             plt.ylabel("Cumulative Returns")
             plt.legend()
-            plt.savefig('static/images/ma_strategy_graph.png')
+            project_dir = os.path.expanduser('/home/strategyalchemist/mysite')
+            image_path = os.path.join(project_dir, 'static/images/strategy_graph.png')
+            plt.savefig(image_path)

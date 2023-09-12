@@ -4,10 +4,6 @@ from strategies.explore.mean_reversion_bollinger_bands import MeanReversionBolli
 from strategies.explore.simple_contrarian import SimpleContrarian
 from strategies.explore.logistic_regression_machine_learning import LogisticRegressionMachineLearning
 from strategies.explore.trend_following_macd import TrendFollowingMACD
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-plt.style.use("seaborn")
 
 app = Flask(__name__)
 
@@ -25,8 +21,8 @@ def moving_average_crossover():
 @app.route('/results_moving_average_crossover.html', methods=['POST'])
 def execute_moving_average_strategy():
     symbol =  request.form['symbol']
-    SMA_S = float(request.form['short_moving_average'])
-    SMA_L = float(request.form['long_moving_average'])
+    SMA_S = int(request.form['short_moving_average'])
+    SMA_L = int(request.form['long_moving_average'])
     start_date = request.form['start_date'] 
     end_date =  request.form['end_date']
     if request.form['tc'] == '':
@@ -37,7 +33,6 @@ def execute_moving_average_strategy():
     strategy.test_strategy()
     strategy.plot_results()
     graph_filename = 'static/images/strategy_graph.png'
-    plt.savefig(graph_filename)
     return render_template('results.html', graph_filename=graph_filename)
 
 
@@ -48,7 +43,7 @@ def bollinger_bands_breakout():
 @app.route('/results_mean_reversion_bollinger_bands.html', methods = ['POST'])
 def execute_bollinger_bands_breakout():
     symbol =  request.form['symbol']
-    SMA = float(request.form['moving_average'])
+    SMA = int(request.form['moving_average'])
     dev = float(request.form['deviation']) 
     start_date = request.form['start_date'] 
     end_date =  request.form['end_date']
@@ -60,7 +55,6 @@ def execute_bollinger_bands_breakout():
     strategy.test_strategy()
     strategy.plot_results()
     graph_filename = 'static/images/strategy_graph.png'
-    plt.savefig(graph_filename)
     return render_template('results.html', graph_filename=graph_filename)
 
 
@@ -81,7 +75,6 @@ def execute_simple_contrarian():
     strategy.test_strategy()
     strategy.plot_results()
     graph_filename = 'static/images/strategy_graph.png'
-    plt.savefig(graph_filename)
     return render_template('results.html', graph_filename=graph_filename)
 
 
@@ -102,7 +95,6 @@ def execute_logistic_regression_machine_learning():
     strategy.test_strategy()
     strategy.plot_results()
     graph_filename = 'static/images/strategy_graph.png'
-    plt.savefig(graph_filename)
     return render_template('results.html', graph_filename=graph_filename)
 
 
@@ -126,7 +118,6 @@ def execute_trend_following_macd():
     strategy.test_strategy()
     strategy.plot_results()
     graph_filename = 'static/images/strategy_graph.png'
-    plt.savefig(graph_filename)
     return render_template('results.html', graph_filename=graph_filename)
 
 if __name__ == '__main__':
